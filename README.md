@@ -7,6 +7,8 @@
 
 ## Architecture du Lab
 
+![lab_soc.png](images/lab_soc.png)
+
 | Composant | Hostname | IP | Rôle |
 | --- | --- | --- | --- |
 | Pare-feu | CASTERLY-ROCK | 192.168.204.134 | OPNsense — routage, DNS Unbound |
