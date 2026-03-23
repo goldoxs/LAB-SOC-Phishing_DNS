@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AfterWork - Inscription</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #1a1108;
+      font-family: 'DM Sans', sans-serif;
+      padding: 40px 20px;
+    }
+
+    .email-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff8ee;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    /* HEADER */
+    .header {
+      background: #1a1108;
+      padding: 48px 40px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -40px; left: -40px; right: -40px; bottom: -40px;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,160,30,0.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 50%, rgba(220,80,20,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .header-tag {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #f0a030;
+      border: 1px solid rgba(240,160,48,0.4);
+      padding: 5px 14px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 900;
+      color: #fff8ee;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .header h1 span {
+      color: #f0a030;
+    }
+
+    .header-sub {
+      font-size: 13px;
+      color: rgba(255,248,238,0.5);
+      margin-top: 12px;
+      letter-spacing: 1px;
+    }
+
+    .glass-divider {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #f0a030, #e05010, transparent);
+    }
+
+    /* BODY */
+    .body {
+      padding: 44px 40px;
+    }
+
+    .greeting {
+      font-size: 15px;
+      color: #5a3e1b;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .greeting strong {
+      color: #1a1108;
+      font-weight: 500;
+    }
+
+    .info-cards {
+      display: flex;
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .info-card {
+      flex: 1;
+      background: #1a1108;
+      border-radius: 4px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+
+    .info-card .icon {
+      font-size: 22px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .info-card .label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(240,160,48,0.7);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .info-card .value {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      color: #fff8ee;
+      font-weight: 700;
+    }
+
+    .message {
+      font-size: 14.5px;
+      color: #4a3218;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    /* CTA */
+    .cta-block {
+      background: linear-gradient(135deg, #1a1108 0%, #2e1e08 100%);
+      border-radius: 4px;
+      padding: 28px 32px;
+      text-align: center;
+      margin-bottom: 28px;
+      border: 1px solid rgba(240,160,48,0.2);
+    }
+
+    .cta-block p {
+      font-size: 13px;
+      color: rgba(255,248,238,0.6);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #f0a030, #e05010);
+      color: #1a1108;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 36px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .cta-btn:hover { opacity: 0.85; }
+
+    .note {
+      font-size: 12.5px;
+      color: #8a6a3a;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .note strong { color: #5a3e1b; }
+
+    /* FOOTER */
+    .footer {
+      background: #f0e6d0;
+      padding: 24px 40px;
+      text-align: center;
+      border-top: 1px solid #d8c8a8;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: #8a7050;
+      line-height: 1.6;
+    }
+
+    .footer .signature {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: #3a2808;
+      margin-bottom: 6px;
+    }
+
+    /* Decoration */
+    .confetti-row {
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 6px;
+      margin: 20px 0;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+
+    <div class="header">
+      <div class="header-tag">Invitation officielle</div>
+      <h1>After<span>Work</span></h1>
+      <p class="header-sub">Une soirée pour souffler ensemble 🥂</p>
+    </div>
+
+    <div class="glass-divider"></div>
+
+    <div class="body">
+      <p class="greeting">
+        Bonjour à tous, <br><br>
+        L'heure est venue de troquer les écrans contre des verres et les réunions contre de bonnes conversations.
+        Notre prochain <strong>AfterWork d'équipe</strong> approche à grands pas !
+      </p>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <span class="icon">📅</span>
+          <span class="label">Date</span>
+          <span class="value">Vendredi<br>Prochain</span>
+        </div>
+        <div class="info-card">
+          <span class="icon">🕕</span>
+          <span class="label">Horaire</span>
+          <span class="value">À partir<br>de 18h00</span>
+        </div>
+        <div class="info-card">
+          <span class="icon">📍</span>
+          <span class="label">Lieu</span>
+          <span class="value">À<br>confirmer</span>
+        </div>
+      </div>
+
+      <p class="message">
+        Pour que nous puissions organiser au mieux la soirée (réservation, boissons, snacks…),
+        merci de vous inscrire sur le <strong>tableau Excel partagé</strong> dès que possible.
+        Indiquez votre prénom et si vous avez des restrictions alimentaires à signaler 🙏
+      </p>
+
+      <div class="cta-block">
+        <p>Cliquez ci-dessous pour accéder au tableau d'inscription</p>
+        <a href="{{.URL}}" class="cta-btn">✏️ &nbsp; Je m'inscris</a>
+      </div>
+
+      <div class="confetti-row">🎉 🍻 🎊 🥳 🍾</div>
+
+      <p class="note">
+        <strong>Date limite d'inscription :</strong> mercredi midi.<br>
+        Pour toute question, répondez directement à cet email.
+      </p>
+    </div>
+
+    <div class="footer">
+      <p class="signature">L'équipe Orga 🎈</p>
+      <p>Ce message est destiné aux membres de l'équipe. Merci de ne pas le transférer.</p>
+    </div>
+
+  </div>
+</body>
+</html>
