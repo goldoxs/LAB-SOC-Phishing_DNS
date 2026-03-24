@@ -453,8 +453,8 @@ Le domaine malveillant est détecté et bloqué en moins d’une minute après l
 
 | Outil / Tool | Version | Rôle / Role |
 | --- | --- | --- |
-| OPNsense | 24.x | Pare-feu, DNS Unbound, API blocage |
-| Wazuh | 4.14.3 | SIEM, corrélation, intégrations |
+| OPNsense | 25.7 | Pare-feu, DNS Unbound, API blocage |
+| Wazuh | 4.14.2 | SIEM, corrélation, intégrations |
 | Sysmon | v15.15 | Télémétrie DNS Windows (Event ID 22) |
 | VirusTotal API | v3 | Réputation de domaine |
 | Shuffle | latest | SOAR, orchestration |
